@@ -12,13 +12,8 @@ def filter_least_common(readings: list, position: int) -> list:
 
 
 def most_common(readings: list, position: int) -> int:
-    zeroes = 0
-    ones = 0
-    for reading in readings:
-        if reading[position] == '0':
-            zeroes += 1
-        else:
-            ones += 1
+    zeroes = len(list(r for r in readings if r[position] == '0'))
+    ones = len(readings) - zeroes
     if zeroes <= ones:
         return 1
     else:
