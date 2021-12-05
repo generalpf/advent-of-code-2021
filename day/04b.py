@@ -6,7 +6,6 @@ def mark_off(cards: list, call: int) -> list:
     return list(map(lambda card: list(map(lambda row: list(map(lambda num: 0 if num == call else num, row)), card)), cards))
 
 
-# return -1 if none
 def did_card_win(card: list) -> bool:
     # check rows
     for i in range(5):
